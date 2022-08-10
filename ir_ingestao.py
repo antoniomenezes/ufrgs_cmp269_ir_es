@@ -5,7 +5,7 @@ import re
 import os
 from ir_utilidades import sgml_to_json, sgml_to_ndjson
 
-path = os.getcwd()
+path = os.getcwd().replace('\\', '/')
 
 print('convertendo arquivos SGML para NDJSON...')
 for filename in os.listdir(path+'/cmp269/gh95'):
@@ -15,8 +15,11 @@ for filename in os.listdir(path+'/cmp269/gh95'):
 
 for filename in os.listdir(path+'/cmp269/gh95_ndjson'):
     if filename.endswith('.json'):
+        comando = 'curl.exe -XPOST localhost:9200/gh95/_bulk?pretty --data-binary "@'+path+'/cmp269/gh95_ndjson/'+filename+'" -H \'Content-Type: application/json\' --output '+path+'/cmp269/gh95_ndjson/'+filename.replace('.json','.log')+'\n'
+        print(comando)	
+        #os.system(comando)
         #print('curl.exe -XPOST localhost:9200/gh95/_bulk?pretty --data-binary "@'+filename+'" -H \'Content-Type: application/json\' \n')
-        print('curl.exe -XPOST localhost:9200/gh95/_bulk?pretty --data-binary "@'+filename+'" -H \'Content-Type: application/json\' --output '+filename.replace('.json','.log')+' \n')
+        #print('curl.exe -XPOST localhost:9200/gh95/_bulk?pretty --data-binary "@'+filename+'" -H \'Content-Type: application/json\' --output '+filename.replace('.json','.log')+' \n')
 
 print('')
 
