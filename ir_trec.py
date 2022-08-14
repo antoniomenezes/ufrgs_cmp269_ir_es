@@ -42,7 +42,7 @@ es = Elasticsearch(hosts=['http://localhost:9200'])
 #  }
 #}
 
-def generate_results_using_all_words(topics_dir, topics_filename, index_name, output_dir, output_filename):
+def generate_results_using_all_words(topics_dir, topics_filename, index_name, output_dir, output_filename, fieldlist):
     with open(topics_dir+'/'+topics_filename, 'r') as f:
         # obter cada topico
         text = f.read()
@@ -66,7 +66,7 @@ def generate_results_using_all_words(topics_dir, topics_filename, index_name, ou
             # Montar o texto composto da query
             query_text = title+' '+desc+' '+narr
             # Executar a query
-            res = es.search(index=index_name, body={"query": {"multi_match": {"query" : query_text, "fields": ["HEADLINE","TEXT"]} } }, size=100)
+            res = es.search(index=index_name, body={"query": {"multi_match": {"query" : query_text, "fields": fieldlist} } }, size=100)
             
             # Preparar linhas de resultados para o arquivo de saída
             hits = []
@@ -145,6 +145,7 @@ def generate_results_word_phrase_stopwords(stopwords_list, topics_dir, topics_fi
             narr = get_tag_value(topic, 'narr')
             title_no_sw = remove_stopwords(title, stopwords_list)
             desc_no_sw = remove_stopwords(desc, stopwords_list)
+            narr_no_sw = remove_stopwords(narr, stopwords_list)
 
             # Montar o texto composto da query
             query_text = title+' '+desc+' '+narr
@@ -154,8 +155,8 @@ def generate_results_word_phrase_stopwords(stopwords_list, topics_dir, topics_fi
                         "bool": {
                             "should": [
                                 {"match": {"HEADLINE" : title} },
-                                {"match": {"TEXT" : title+' '+desc} },
-                                {"match": {"TEXT" : title_no_sw+' '+desc_no_sw} },                                
+                                {"match": {"TEXT" : title+' '+desc+' '+narr} },
+                                {"match": {"TEXT" : title_no_sw+' '+desc_no_sw+' '+narr_no_sw} },                                
                                 {"match_phrase": {"HEADLINE": title} }
                             ]
                         }
@@ -182,7 +183,11 @@ sw_list = stopwords.words('english')
 
 #generate_results_using_all_words(path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es.txt')
 #generate_results_word_phrase_stopwords(sw_list, path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es_2.txt')
-generate_results_no_punctuation(path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es_2.txt')
+#generate_results_no_punctuation(path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es_2.txt')
+
+generate_results_using_all_words(path+'/cmp269/efe95', 'Topicos.txt', 'efe95', path+'/cmp269/efe95', 'saida_efe95_allwords_es.txt', fieldlist=['TITLE', 'TEXT'])
+
+generate_results_word_phrase_stopwords(sw_list, path+'/cmp269/efe95', 'Topicos.txt', 'efe95', path+'/cmp269/efe95', 'saida_efe95_nostopwords_es.txt')
 
 '''
 query_text = "Alternative Medicine Find documents discussing any kind of alternative or natural medical treatment including specific therapies such as acupuncture, homeopathy, chiropractics, or others. Relevant documents will provide general or specific information on the use of natural or alternative medical treatments or practices."
