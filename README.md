@@ -1,2 +1,5 @@
-# ufrgs_cmp269_ir_es
-Rotinas auxiliares para o trabalho de Information Retrieval da disciplina CMP269 - UFRGS
+# CMP269 - Information Retrieval (UFRGS)
+# Trabalho Prático - Indexação de Documentos com ElasticSearch
+# Agosto de 2022
+
+Rotinas Auxiliares em Python para o Trabalho Prático
