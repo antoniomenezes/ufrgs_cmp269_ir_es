@@ -42,7 +42,7 @@ es = Elasticsearch(hosts=['http://localhost:9200'])
 #  }
 #}
 
-def generate_results_using_all_words(topics_dir, topics_filename, index_name, output_dir, output_filename, fieldlist):
+def query_all_words(topics_dir, topics_filename, index_name, output_dir, output_filename, fieldlist):
     with open(topics_dir+'/'+topics_filename, 'r') as f:
         # obter cada topico
         text = f.read()
@@ -79,12 +79,30 @@ def generate_results_using_all_words(topics_dir, topics_filename, index_name, ou
         f.close()
 
 def remove_stopwords(text, stopwords_list):
-    for word in stopwords_list:
-        text = text.replace(word, '')
-        text = text.translate(str.maketrans('', '', punctuation))
-    return text
+    # removing punctuation
+    text = text.translate(str.maketrans('', '', punctuation))
+    text = text.replace('\n', ' ')
+    new_text = ''
+    for word in text.split(' '):
+        if word not in stopwords_list:
+            new_text = new_text + ' ' + word
+    return new_text.strip()
 
-def generate_results_no_punctuation(topics_dir, topics_filename, index_name, output_dir, output_filename):
+def extract_entities_and_no_stopwords(text, stopwords_list):
+    # removing punctuation
+    text = text.translate(str.maketrans('', '', punctuation))
+    text = text.replace('\n', ' ')
+    words = set()
+    for word in text.split(' '):
+        if len(word)>0 and word.lower() not in stopwords_list:
+            if word[0] == word.upper()[0]:
+                words.add(word)
+                #new_text = new_text + ' ' + word
+    new_text = ' '.join(list(words))
+    return new_text.strip()
+
+
+def query_word_phrase_stopwords(stopwords_list, topics_dir, topics_filename, index_name, output_dir, output_filename):
     with open(topics_dir+'/'+topics_filename, 'r') as f:
         # obter cada topico
         text = f.read()
@@ -97,45 +115,7 @@ def generate_results_no_punctuation(topics_dir, topics_filename, index_name, out
             new_text = new_text.replace('<top>'+next_topic+'</top>', '')
 
         f = open(output_dir+'/'+output_filename, 'w', encoding='utf-8')
-
-        for topic in topics:
-            # obter os valores de tags para cada topico
-            num = get_tag_value(topic, 'num')
-            title = get_tag_value(topic, 'title')
-            desc = get_tag_value(topic, 'desc')
-            narr = get_tag_value(topic, 'narr')        
-
-            title = title.translate(str.maketrans('', '', punctuation))
-            desc = desc.translate(str.maketrans('', '', punctuation))
-            narr = narr.translate(str.maketrans('', '', punctuation))
-
-            # Montar o texto composto da query
-            query_text = title+' '+desc+' '+narr
-
-            # Executar a query
-            res = es.search(index=index_name, body={"query": {"multi_match": {"query" : query_text, "fields": ["HEADLINE","TEXT"]} } }, size=100)
-            hits = []
-            for rank, hit in enumerate(res['hits']['hits'], 1):
-                hits.append(run.TrecEvalRun(rank=rank, doc_id=hit['_source']['DOCID'], q=0, score=hit['_score'], run_id='antonio', topic=num))
-
-            # Escrever os resultados no arquivo de saída
-            for hit in hits:
-                f.write(hit.__str__()+'\n')	
-        f.close()
-
-def generate_results_word_phrase_stopwords(stopwords_list, topics_dir, topics_filename, index_name, output_dir, output_filename):
-    with open(topics_dir+'/'+topics_filename, 'r') as f:
-        # obter cada topico
-        text = f.read()
-        new_text = text
-        topics = []
-        next_topic = ''
-        while(new_text.find('top>') != -1):
-            next_topic = get_tag_value(new_text, 'top')            
-            topics.append(next_topic)
-            new_text = new_text.replace('<top>'+next_topic+'</top>', '')
-
-        f = open(output_dir+'/'+output_filename, 'w', encoding='utf-8')
+        f_query = open(output_dir+'/'+output_filename.replace('.txt','')+'_queries.txt', 'w', encoding='utf-8')
 
         for topic in topics:
             # obter os valores de tags para cada topico
@@ -146,6 +126,9 @@ def generate_results_word_phrase_stopwords(stopwords_list, topics_dir, topics_fi
             title_no_sw = remove_stopwords(title, stopwords_list)
             desc_no_sw = remove_stopwords(desc, stopwords_list)
             narr_no_sw = remove_stopwords(narr, stopwords_list)
+            #title_no_sw = extract_entities_and_no_stopwords(title, stopwords_list)
+            #desc_no_sw = extract_entities_and_no_stopwords(desc, stopwords_list)
+            #narr_no_sw = extract_entities_and_no_stopwords(narr, stopwords_list)
 
             # Montar o texto composto da query
             query_text = title+' '+desc+' '+narr
@@ -154,7 +137,7 @@ def generate_results_word_phrase_stopwords(stopwords_list, topics_dir, topics_fi
                     "query": {
                         "bool": {
                             "should": [
-                                {"match": {"HEADLINE" : title} },
+                                {"match": {"HEADLINE" : title_no_sw} },
                                 {"match": {"TEXT" : title+' '+desc+' '+narr} },
                                 {"match": {"TEXT" : title_no_sw+' '+desc_no_sw+' '+narr_no_sw} },                                
                                 {"match_phrase": {"HEADLINE": title} }
@@ -164,6 +147,18 @@ def generate_results_word_phrase_stopwords(stopwords_list, topics_dir, topics_fi
                 }, size=100
             )
 
+            query_string = """query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"HEADLINE" : """+title_no_sw+"""} },
+                                {"match": {"TEXT" : """+title+""" """+desc+""" """+narr+"""} },
+                                {"match": {"TEXT" : """+title_no_sw+""" """+desc_no_sw+""" """+narr_no_sw+"""} },                                
+                                {"match_phrase": {"HEADLINE": """+title+"""} }
+                            ]
+                        }
+                    }"""
+            f_query.write(query_string+'\n')	 
+
             hits = []
             for rank, hit in enumerate(res['hits']['hits'], 1):
                 hits.append(run.TrecEvalRun(rank=rank, doc_id=hit['_source']['DOCID'], q=0, score=hit['_score'], run_id='antonio', topic=num))
@@ -172,22 +167,37 @@ def generate_results_word_phrase_stopwords(stopwords_list, topics_dir, topics_fi
             for hit in hits:
                 f.write(hit.__str__()+'\n')	
         f.close()
+        f_query.close()
 
 
 
-path = os.getcwd()
+#path = os.getcwd()
+path = os.getcwd().replace('\\', '/')
+
+# para o índice gh95
+nome_do_indice = 'gh95'
+arquivo_de_topicos = 'topicos05.txt'
+fieldlist=['HEADLINE', 'TEXT']
+fieldlist=['TEXT']
+sw_list = stopwords.words('english')
+
+# para o índice efe95
+#nome_do_indice = 'efe95'
+#arquivo_de_topicos = 'Topicos.txt'
+#fieldlist=['TITLE', 'TEXT']
+#sw_list = stopwords.words('spanish')
+
 
 print(path)
 
-sw_list = stopwords.words('english')
 
 #generate_results_using_all_words(path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es.txt')
 #generate_results_word_phrase_stopwords(sw_list, path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es_2.txt')
 #generate_results_no_punctuation(path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es_2.txt')
 
-generate_results_using_all_words(path+'/cmp269/efe95', 'Topicos.txt', 'efe95', path+'/cmp269/efe95', 'saida_efe95_allwords_es.txt', fieldlist=['TITLE', 'TEXT'])
+query_all_words(path+'/cmp269/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/cmp269/'+nome_do_indice, 'saida_'+nome_do_indice+'_allwords_es.txt', fieldlist)
 
-generate_results_word_phrase_stopwords(sw_list, path+'/cmp269/efe95', 'Topicos.txt', 'efe95', path+'/cmp269/efe95', 'saida_efe95_nostopwords_es.txt')
+query_word_phrase_stopwords(sw_list, path+'/cmp269/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/cmp269/'+nome_do_indice, 'saida_'+nome_do_indice+'_nostopwords_es.txt')
 
 '''
 query_text = "Alternative Medicine Find documents discussing any kind of alternative or natural medical treatment including specific therapies such as acupuncture, homeopathy, chiropractics, or others. Relevant documents will provide general or specific information on the use of natural or alternative medical treatments or practices."
