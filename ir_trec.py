@@ -7,7 +7,14 @@
 # pip install ir-kit
 # https://github.com/hscells/ir-kit
 
+# Downloading english language model
+# python -m spacy download en_core_web_sm
+
+# Downloading spanish language model
+# python -m spacy download es_core_news_sm
+
 from datetime import datetime
+from html import entities
 import os
 from string import punctuation
 
@@ -19,6 +26,8 @@ import matplotlib.pyplot as plt
 
 import nltk
 from nltk.corpus import stopwords
+
+import spacy
 
 from ir_utilidades import get_tags, get_topics_text, get_tag_value
 
@@ -80,7 +89,8 @@ def query_all_words(topics_dir, topics_filename, index_name, output_dir, output_
 
 def remove_stopwords(text, stopwords_list):
     # removing punctuation
-    text = text.translate(str.maketrans('', '', punctuation))
+    for ch in punctuation:
+        text = text.replace(ch, ' ')
     text = text.replace('\n', ' ')
     new_text = ''
     for word in text.split(' '):
@@ -88,21 +98,20 @@ def remove_stopwords(text, stopwords_list):
             new_text = new_text + ' ' + word
     return new_text.strip()
 
-def extract_entities_and_no_stopwords(text, stopwords_list):
-    # removing punctuation
-    text = text.translate(str.maketrans('', '', punctuation))
-    text = text.replace('\n', ' ')
-    words = set()
-    for word in text.split(' '):
-        if len(word)>0 and word.lower() not in stopwords_list:
-            if word[0] == word.upper()[0]:
-                words.add(word)
-                #new_text = new_text + ' ' + word
-    new_text = ' '.join(list(words))
-    return new_text.strip()
+def extract_entities(text, language):
+    entities = []
+    if language == 'en':
+        nlp = spacy.load("en_core_web_sm")
+    elif language == 'es':
+        nlp = spacy.load("es_core_news_sm")
+    else:
+        raise Exception("Language not supported")
+    doc = nlp(text)
+    for ent in doc.ents:
+        entities.append(ent.text.strip())
+    return entities
 
-
-def query_word_phrase_stopwords(stopwords_list, topics_dir, topics_filename, index_name, output_dir, output_filename):
+def query_word_phrase_stopwords(stopwords_list, topics_dir, topics_filename, index_name, output_dir, output_filename, language, fields):
     with open(topics_dir+'/'+topics_filename, 'r') as f:
         # obter cada topico
         text = f.read()
@@ -126,9 +135,11 @@ def query_word_phrase_stopwords(stopwords_list, topics_dir, topics_filename, ind
             title_no_sw = remove_stopwords(title, stopwords_list)
             desc_no_sw = remove_stopwords(desc, stopwords_list)
             narr_no_sw = remove_stopwords(narr, stopwords_list)
-            #title_no_sw = extract_entities_and_no_stopwords(title, stopwords_list)
-            #desc_no_sw = extract_entities_and_no_stopwords(desc, stopwords_list)
-            #narr_no_sw = extract_entities_and_no_stopwords(narr, stopwords_list)
+
+            entities = list(set(extract_entities(title+' '+desc+' '+narr, language)))
+            entities_text = ''
+            if len(entities) > 0:
+                entities_text = ' '.join(entities)
 
             # Montar o texto composto da query
             query_text = title+' '+desc+' '+narr
@@ -137,26 +148,33 @@ def query_word_phrase_stopwords(stopwords_list, topics_dir, topics_filename, ind
                     "query": {
                         "bool": {
                             "should": [
-                                {"match": {"HEADLINE" : title_no_sw} },
-                                {"match": {"TEXT" : title+' '+desc+' '+narr} },
-                                {"match": {"TEXT" : title_no_sw+' '+desc_no_sw+' '+narr_no_sw} },                                
-                                {"match_phrase": {"HEADLINE": title} }
+                                {"match": {fields[0] : title_no_sw } },
+                                {"match": {fields[1] : title+' '+desc+' '+narr} },
+                                {"match": {fields[1] : title_no_sw+' '+desc_no_sw+' '+narr_no_sw} },                                
+                                {"match_phrase": {fields[0]: title} }
+                            ],
+                            "must": [
+                                {"match": {fields[1] : title_no_sw+' '+entities_text } }                                
                             ]
                         }
                     }
                 }, size=100
             )
 
-            query_string = """query": {
+            query_string = """{"query": {
                         "bool": {
                             "should": [
-                                {"match": {"HEADLINE" : """+title_no_sw+"""} },
-                                {"match": {"TEXT" : """+title+""" """+desc+""" """+narr+"""} },
-                                {"match": {"TEXT" : """+title_no_sw+""" """+desc_no_sw+""" """+narr_no_sw+"""} },                                
-                                {"match_phrase": {"HEADLINE": """+title+"""} }
+                                {"match": {\""""+fields[0]+"""\" : \""""+title_no_sw+"""\" } },
+                                {"match": {\""""+fields[1]+"""\" : \""""+title+""" """+desc+""" """+narr+"""\"} },
+                                {"match": {\""""+fields[1]+"""\" : \""""+title_no_sw+""" """+desc_no_sw+""" """+narr_no_sw+"""\"} },                                
+                                {"match_phrase": {\""""+fields[0]+"""\": \""""+title+"""\"} }
+                            ],
+                            "must": [
+                                {"match": {\""""+fields[1]+"""\" : \""""+title_no_sw+' '+entities_text+"""\" } }
                             ]
                         }
-                    }"""
+                    }
+                }"""
             f_query.write(query_string+'\n')	 
 
             hits = []
@@ -175,18 +193,24 @@ def query_word_phrase_stopwords(stopwords_list, topics_dir, topics_filename, ind
 path = os.getcwd().replace('\\', '/')
 
 # para o índice gh95
-nome_do_indice = 'gh95'
-arquivo_de_topicos = 'topicos05.txt'
-fieldlist=['HEADLINE', 'TEXT']
-fieldlist=['TEXT']
-sw_list = stopwords.words('english')
+#nome_do_indice = 'gh95'
+#arquivo_de_topicos = 'topicos05.txt'
+#fieldlist=['HEADLINE', 'TEXT']
+#sw_list = stopwords.words('english')
+#language = 'en'
+#sw_list.append('find')
+#sw_list.append('documents')
 
 # para o índice efe95
-#nome_do_indice = 'efe95'
-#arquivo_de_topicos = 'Topicos.txt'
-#fieldlist=['TITLE', 'TEXT']
-#sw_list = stopwords.words('spanish')
-
+nome_do_indice = 'efe95'
+arquivo_de_topicos = 'Topicos.txt'
+fieldlist=['TITLE', 'TEXT']
+sw_list = stopwords.words('spanish')
+language = 'es'
+sw_list.append('encontrar')
+sw_list.append('documentos')
+sw_list.append('relevantes')
+sw_list.append('información')
 
 print(path)
 
@@ -195,9 +219,9 @@ print(path)
 #generate_results_word_phrase_stopwords(sw_list, path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es_2.txt')
 #generate_results_no_punctuation(path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es_2.txt')
 
-query_all_words(path+'/cmp269/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/cmp269/'+nome_do_indice, 'saida_'+nome_do_indice+'_allwords_es.txt', fieldlist)
+query_all_words(path+'/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/'+nome_do_indice, 'saida_'+nome_do_indice+'_allwords_es.txt', fieldlist)
 
-query_word_phrase_stopwords(sw_list, path+'/cmp269/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/cmp269/'+nome_do_indice, 'saida_'+nome_do_indice+'_nostopwords_es.txt')
+query_word_phrase_stopwords(sw_list, path+'/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/'+nome_do_indice, 'saida_'+nome_do_indice+'_nostopwords_es.txt', language, fields=fieldlist)
 
 '''
 query_text = "Alternative Medicine Find documents discussing any kind of alternative or natural medical treatment including specific therapies such as acupuncture, homeopathy, chiropractics, or others. Relevant documents will provide general or specific information on the use of natural or alternative medical treatments or practices."
