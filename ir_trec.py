@@ -51,6 +51,31 @@ es = Elasticsearch(hosts=['http://localhost:9200'])
 #  }
 #}
 
+# Parametros de entrada
+
+#path = os.getcwd()
+path = os.getcwd().replace('\\', '/')
+
+# para o índice gh95
+#nome_do_indice = 'gh95'
+#arquivo_de_topicos = 'topicos05.txt'
+#fieldlist=['HEADLINE', 'TEXT']
+#language = 'en'
+#sw_list = stopwords.words('english')
+#sw_list_extra = ['find','documents']
+#sw_list = sw_list + sw_list_extra
+
+# para o índice efe95
+nome_do_indice = 'efe95'
+arquivo_de_topicos = 'Topicos.txt'
+fieldlist=['TITLE', 'TEXT']
+language = 'es'
+sw_list = stopwords.words('spanish')
+sw_list_extra = ['encontrar','documentos','relevantes','información']
+sw_list = sw_list + sw_list_extra
+
+
+
 def query_all_words(topics_dir, topics_filename, index_name, output_dir, output_filename, fieldlist):
     with open(topics_dir+'/'+topics_filename, 'r') as f:
         # obter cada topico
@@ -94,7 +119,7 @@ def remove_stopwords(text, stopwords_list):
     text = text.replace('\n', ' ')
     new_text = ''
     for word in text.split(' '):
-        if word not in stopwords_list:
+        if word.lower() not in stopwords_list:
             new_text = new_text + ' ' + word
     return new_text.strip()
 
@@ -149,12 +174,12 @@ def query_word_phrase_stopwords(stopwords_list, topics_dir, topics_filename, ind
                         "bool": {
                             "should": [
                                 {"match": {fields[0] : title_no_sw } },
-                                {"match": {fields[1] : title+' '+desc+' '+narr} },
+                                {"match": {fields[1] : remove_stopwords(title+' '+desc+' '+narr, sw_list_extra)} },
                                 {"match": {fields[1] : title_no_sw+' '+desc_no_sw+' '+narr_no_sw} },                                
                                 {"match_phrase": {fields[0]: title} }
                             ],
                             "must": [
-                                {"match": {fields[1] : title_no_sw+' '+entities_text } }                                
+                                {"match": {fields[1] : remove_stopwords(title_no_sw+' '+entities_text, sw_list_extra) } }                                
                             ]
                         }
                     }
@@ -165,12 +190,12 @@ def query_word_phrase_stopwords(stopwords_list, topics_dir, topics_filename, ind
                         "bool": {
                             "should": [
                                 {"match": {\""""+fields[0]+"""\" : \""""+title_no_sw+"""\" } },
-                                {"match": {\""""+fields[1]+"""\" : \""""+title+""" """+desc+""" """+narr+"""\"} },
-                                {"match": {\""""+fields[1]+"""\" : \""""+title_no_sw+""" """+desc_no_sw+""" """+narr_no_sw+"""\"} },                                
+                                {"match": {\""""+fields[1]+"""\" : \""""+remove_stopwords(title+' '+desc+' '+narr, sw_list_extra)+"""\"} },
+                                {"match": {\""""+fields[1]+"""\" : \""""+title_no_sw+' '+desc_no_sw+' '+narr_no_sw+"""\"} },                                
                                 {"match_phrase": {\""""+fields[0]+"""\": \""""+title+"""\"} }
                             ],
                             "must": [
-                                {"match": {\""""+fields[1]+"""\" : \""""+title_no_sw+' '+entities_text+"""\" } }
+                                {"match": {\""""+fields[1]+"""\" : \""""+remove_stopwords(title_no_sw+' '+entities_text, sw_list_extra)+"""\" } }
                             ]
                         }
                     }
@@ -189,32 +214,6 @@ def query_word_phrase_stopwords(stopwords_list, topics_dir, topics_filename, ind
 
 
 
-#path = os.getcwd()
-path = os.getcwd().replace('\\', '/')
-
-# para o índice gh95
-#nome_do_indice = 'gh95'
-#arquivo_de_topicos = 'topicos05.txt'
-#fieldlist=['HEADLINE', 'TEXT']
-#sw_list = stopwords.words('english')
-#language = 'en'
-#sw_list.append('find')
-#sw_list.append('documents')
-
-# para o índice efe95
-nome_do_indice = 'efe95'
-arquivo_de_topicos = 'Topicos.txt'
-fieldlist=['TITLE', 'TEXT']
-sw_list = stopwords.words('spanish')
-language = 'es'
-sw_list.append('encontrar')
-sw_list.append('documentos')
-sw_list.append('relevantes')
-sw_list.append('información')
-
-print(path)
-
-
 #generate_results_using_all_words(path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es.txt')
 #generate_results_word_phrase_stopwords(sw_list, path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es_2.txt')
 #generate_results_no_punctuation(path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es_2.txt')
@@ -222,6 +221,8 @@ print(path)
 query_all_words(path+'/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/'+nome_do_indice, 'saida_'+nome_do_indice+'_allwords_es.txt', fieldlist)
 
 query_word_phrase_stopwords(sw_list, path+'/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/'+nome_do_indice, 'saida_'+nome_do_indice+'_nostopwords_es.txt', language, fields=fieldlist)
+
+print('Queries executadas')
 
 '''
 query_text = "Alternative Medicine Find documents discussing any kind of alternative or natural medical treatment including specific therapies such as acupuncture, homeopathy, chiropractics, or others. Relevant documents will provide general or specific information on the use of natural or alternative medical treatments or practices."
