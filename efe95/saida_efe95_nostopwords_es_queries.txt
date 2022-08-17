@@ -7,7 +7,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Carta bomba Kiesbauer ",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -25,13 +25,13 @@
                                 {"match_phrase": {"TITLE": " Christo envuelve el edificio del Reichstag alemán "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Christo envuelve edificio Reichstag alemán Berlín Reichstag Encontrar",
-                                        "boost": 10}
+                                        "query": "Christo envuelve edificio Reichstag alemán Berlín Encontrar Reichstag",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Christo envuelve edificio Reichstag alemán Berlín Reichstag Encontrar" } }
+                                {"match": {"TEXT" : "Christo envuelve edificio Reichstag alemán Berlín Encontrar Reichstag" } }
                             ]
                         }
                     }
@@ -45,7 +45,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Conferencia Mujer Pekín Pekín",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -63,13 +63,13 @@
                                 {"match_phrase": {"TITLE": " Diamantes y rebelión en Sierra Leona "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Diamantes rebelión Sierra Leona Sierra Leona? Sierra Leona   ¿Cómo",
-                                        "boost": 10}
+                                        "query": "Diamantes rebelión Sierra Leona Sierra Leona   ¿Cómo Sierra Leona?",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Diamantes rebelión Sierra Leona Sierra Leona? Sierra Leona   ¿Cómo" } }
+                                {"match": {"TEXT" : "Diamantes rebelión Sierra Leona Sierra Leona   ¿Cómo Sierra Leona?" } }
                             ]
                         }
                     }
@@ -83,7 +83,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Importaciones arroz Japón Japón   Encontrar Japón",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -101,13 +101,13 @@
                                 {"match_phrase": {"TITLE": " Comida rápida en Japón "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Comida rápida Japón Japón   ¿Qué Japón?",
-                                        "boost": 10}
+                                        "query": "Comida rápida Japón Japón? Japón   ¿Qué",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Comida rápida Japón Japón   ¿Qué Japón?" } }
+                                {"match": {"TEXT" : "Comida rápida Japón Japón? Japón   ¿Qué" } }
                             ]
                         }
                     }
@@ -121,7 +121,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Accidentes petrolíferos aves Encontrar",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -140,7 +140,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Destrucción capa ozono ",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -159,7 +159,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Visita Papa Sri Lanka Sri Lanka Sri Lanka   Encontrar",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -177,13 +177,13 @@
                                 {"match_phrase": {"TITLE": " AI contra la pena de muerte "} },
                                 {"match": {
                                     "content": {
-                                        "query": "AI pena muerte AI Amnistía Internacional Encontrar",
-                                        "boost": 10}
+                                        "query": "AI pena muerte Encontrar Amnistía Internacional AI",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "AI pena muerte AI Amnistía Internacional Encontrar" } }
+                                {"match": {"TEXT" : "AI pena muerte Encontrar Amnistía Internacional AI" } }
                             ]
                         }
                     }
@@ -197,7 +197,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "maravillas Mundo Antiguo ",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -216,7 +216,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "derechos infancia Convención de las Naciones Unidas Encontrar",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -235,7 +235,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Juegos Olímpicos paz ",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -254,7 +254,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Libertad Expresión Internet ",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -273,7 +273,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Riesgos teléfonos móviles ",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -292,7 +292,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Sindicatos Europa Europa   ¿Qué",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -311,7 +311,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Ganadoras Wimbledon ",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -329,13 +329,13 @@
                                 {"match_phrase": {"TITLE": " Fútbol: disturbios en Dublín "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Fútbol  disturbios Dublín Irlanda Inglaterra Dublín   Encontrar Dublín",
-                                        "boost": 10}
+                                        "query": "Fútbol  disturbios Dublín Dublín   Encontrar Dublín Inglaterra Irlanda",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Fútbol  disturbios Dublín Irlanda Inglaterra Dublín   Encontrar Dublín" } }
+                                {"match": {"TEXT" : "Fútbol  disturbios Dublín Dublín   Encontrar Dublín Inglaterra Irlanda" } }
                             ]
                         }
                     }
@@ -348,13 +348,13 @@
                                 {"match_phrase": {"TITLE": " Medio ambiente y petróleo en el Mar del Norte "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Medio ambiente petróleo Mar Norte Mar del Norte   ¿Qué Mar del Norte",
-                                        "boost": 10}
+                                        "query": "Medio ambiente petróleo Mar Norte Mar del Norte Mar del Norte   ¿Qué",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Medio ambiente petróleo Mar Norte Mar del Norte   ¿Qué Mar del Norte" } }
+                                {"match": {"TEXT" : "Medio ambiente petróleo Mar Norte Mar del Norte Mar del Norte   ¿Qué" } }
                             ]
                         }
                     }
@@ -368,7 +368,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Consumo whisky escocés Escocia",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -387,7 +387,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Dietas celíacos ",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -405,13 +405,13 @@
                                 {"match_phrase": {"TITLE": " Aduanas entre la UE y Turquía "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Aduanas UE Turquía Grecia Unión Europea UE Turquía   Encontrar Turquía",
-                                        "boost": 10}
+                                        "query": "Aduanas UE Turquía Grecia Turquía   Encontrar Turquía Unión Europea UE",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Aduanas UE Turquía Grecia Unión Europea UE Turquía   Encontrar Turquía" } }
+                                {"match": {"TEXT" : "Aduanas UE Turquía Grecia Turquía   Encontrar Turquía Unión Europea UE" } }
                             ]
                         }
                     }
@@ -425,7 +425,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Restricciones fumadores Encontrar",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -443,13 +443,13 @@
                                 {"match_phrase": {"TITLE": " Sentencias sobre drogas en Europa "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Sentencias drogas Europa Europa   ¿Qué Europa",
-                                        "boost": 10}
+                                        "query": "Sentencias drogas Europa Europa Europa   ¿Qué",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Sentencias drogas Europa Europa   ¿Qué Europa" } }
+                                {"match": {"TEXT" : "Sentencias drogas Europa Europa Europa   ¿Qué" } }
                             ]
                         }
                     }
@@ -463,7 +463,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Globos Oro 1994 ",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -482,7 +482,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "general francés zona seguridad Balcanes Balcanes   ¿Quién",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -501,7 +501,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Relaciones China Mongolia Mongolia China",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -520,7 +520,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Asesinato Rabin qué?",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -539,7 +539,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "aparición grabadora CD ",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -558,7 +558,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Lenguas oficiales UE UE   Encontrar Unión Europea",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -577,7 +577,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Final hockey hielo Lillehammer Lillehammer   ¿Qué",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -595,13 +595,13 @@
                                 {"match_phrase": {"TITLE": " Récords mundiales de Atletismo de 1995 "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Récords mundiales Atletismo 1995 Göteborg? Atletismo",
-                                        "boost": 10}
+                                        "query": "Récords mundiales Atletismo 1995 Atletismo Göteborg?",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Récords mundiales Atletismo 1995 Göteborg? Atletismo" } }
+                                {"match": {"TEXT" : "Récords mundiales Atletismo 1995 Atletismo Göteborg?" } }
                             ]
                         }
                     }
@@ -615,7 +615,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Pruebas quark top Encontrar",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -634,7 +634,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Polémica crucifijos Bavaria Bavaria   Encontrar",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -652,13 +652,13 @@
                                 {"match_phrase": {"TITLE": " Impacto medioambiental en los Everglades "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Impacto medioambiental Everglades Everglades   Encontrar Florida Everglades",
-                                        "boost": 10}
+                                        "query": "Impacto medioambiental Everglades Florida Everglades Everglades   Encontrar",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Impacto medioambiental Everglades Everglades   Encontrar Florida Everglades" } }
+                                {"match": {"TEXT" : "Impacto medioambiental Everglades Florida Everglades Everglades   Encontrar" } }
                             ]
                         }
                     }
@@ -671,13 +671,13 @@
                                 {"match_phrase": {"TITLE": " El Shoemaker-Levy y Júpiter "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Shoemaker Levy Júpiter cometa Shoemaker-Levy planeta Júpiter Júpiter   Encontrar",
-                                        "boost": 10}
+                                        "query": "Shoemaker Levy Júpiter planeta Júpiter Júpiter   Encontrar cometa Shoemaker-Levy",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Shoemaker Levy Júpiter cometa Shoemaker-Levy planeta Júpiter Júpiter   Encontrar" } }
+                                {"match": {"TEXT" : "Shoemaker Levy Júpiter planeta Júpiter Júpiter   Encontrar cometa Shoemaker-Levy" } }
                             ]
                         }
                     }
@@ -691,7 +691,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Consumo leche Europa Europa   Proporcionar Europa",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -710,7 +710,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Insumisión ",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -729,7 +729,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Dimisión Secretario General OTAN OTAN Secretario General de la Secretario General de la OTAN",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -748,7 +748,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Bancarrota Barings Barings? Barings   ¿Qué",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -766,13 +766,13 @@
                                 {"match_phrase": {"TITLE": " Pruebas nucleares francesas "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Pruebas nucleares francesas Encontrar Francia",
-                                        "boost": 10}
+                                        "query": "Pruebas nucleares francesas Francia Encontrar",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Pruebas nucleares francesas Encontrar Francia" } }
+                                {"match": {"TEXT" : "Pruebas nucleares francesas Francia Encontrar" } }
                             ]
                         }
                     }
@@ -786,7 +786,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "50 aniversario desembarco Normandía Sainte-Mère-Église",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -805,7 +805,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Restos dinosaurios Asia Asia   ¿ Asia",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -823,13 +823,13 @@
                                 {"match_phrase": {"TITLE": " Permiso de maternidad en Europa "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Permiso maternidad Europa Europa   Encontrar Europa",
-                                        "boost": 10}
+                                        "query": "Permiso maternidad Europa Europa Europa   Encontrar",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Permiso maternidad Europa Europa   Encontrar Europa" } }
+                                {"match": {"TEXT" : "Permiso maternidad Europa Europa Europa   Encontrar" } }
                             ]
                         }
                     }
@@ -842,13 +842,13 @@
                                 {"match_phrase": {"TITLE": " Fotos holandesas de Srebrenica "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Fotos holandesas Srebrenica Srebrenica   ¿Qué Srebrenica",
-                                        "boost": 10}
+                                        "query": "Fotos holandesas Srebrenica Srebrenica Srebrenica   ¿Qué",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Fotos holandesas Srebrenica Srebrenica   ¿Qué Srebrenica" } }
+                                {"match": {"TEXT" : "Fotos holandesas Srebrenica Srebrenica Srebrenica   ¿Qué" } }
                             ]
                         }
                     }
@@ -862,7 +862,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Coalición gobierno holandés Holanda",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -881,7 +881,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Transporte nuclear Alemania Alemania   Encontrar Alemania",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -900,7 +900,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Reforma ortografía alemana ",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -919,7 +919,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Hubble agujeros negros ",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -938,7 +938,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Trabajo infantil Asia Asia   Encontrar Asia",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -957,7 +957,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Cultivos Delta Ebro Delta del Ebro Delta del Ebro   ¿Cuál",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -975,13 +975,13 @@
                                 {"match_phrase": {"TITLE": " Asesinato del director de una cadena de TV en Rusia "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Asesinato director cadena TV Rusia Rusia   ¿Cómo Moscú?",
-                                        "boost": 10}
+                                        "query": "Asesinato director cadena TV Rusia Moscú? Rusia   ¿Cómo",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Asesinato director cadena TV Rusia Rusia   ¿Cómo Moscú?" } }
+                                {"match": {"TEXT" : "Asesinato director cadena TV Rusia Moscú? Rusia   ¿Cómo" } }
                             ]
                         }
                     }
@@ -994,13 +994,13 @@
                                 {"match_phrase": {"TITLE": " La UE y los países bálticos "} },
                                 {"match": {
                                     "content": {
-                                        "query": "UE países bálticos Lituania Unión Europea Estonia Encontrar UE Letonia",
-                                        "boost": 10}
+                                        "query": "UE países bálticos Lituania Encontrar Letonia Unión Europea Estonia UE",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "UE países bálticos Lituania Unión Europea Estonia Encontrar UE Letonia" } }
+                                {"match": {"TEXT" : "UE países bálticos Lituania Encontrar Letonia Unión Europea Estonia UE" } }
                             ]
                         }
                     }
@@ -1014,7 +1014,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Familia real italiana Italia",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -1033,7 +1033,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Huelga asistentes vuelo italianos Italia Encontrar",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -1052,7 +1052,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Fusión bancos japoneses Banco de Tokyo Encontrar Mitsubishi",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -1071,7 +1071,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Tratado paz Dayton Dayton Bosnia-Herzegovina",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -1090,7 +1090,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Oscar honorífico directores italianos Encontrar",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -1109,7 +1109,7 @@
                                 {"match": {
                                     "content": {
                                         "query": "Epidemia ébola Zaire Zaire   Encontrar Zaire",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -1127,13 +1127,13 @@
                                 {"match_phrase": {"TITLE": " Inundaciones en Holanda y Alemania "} },
                                 {"match": {
                                     "content": {
-                                        "query": "Inundaciones Holanda Alemania Alemania   Encontrar Holanda Alemania",
-                                        "boost": 10}
+                                        "query": "Inundaciones Holanda Alemania Holanda Alemania   Encontrar Alemania",
+                                        "boost": 3}
                                     }
                                 }
                             ],
                             "must": [
-                                {"match": {"TEXT" : "Inundaciones Holanda Alemania Alemania   Encontrar Holanda Alemania" } }
+                                {"match": {"TEXT" : "Inundaciones Holanda Alemania Holanda Alemania   Encontrar Alemania" } }
                             ]
                         }
                     }
