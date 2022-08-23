@@ -241,64 +241,6 @@ def remove_avoided_sentences(text, language):
     return ' '.join(allowed_sents).strip()
 
 
-def get_similar(word, nlp):
-    token = nlp(word)[0]
-    #print(token._.wordnet.synsets())
-    #print(token._.wordnet.lemmas())
-    #print(token._.wordnet.wordnet_domains())
-
-
-def most_similar(word, nlp, topn=3):
-    word = nlp.vocab[word]
-    queries = [
-        w for w in word.vocab 
-        if w.is_lower == word.is_lower and w.prob >= -15 and np.count_nonzero(w.vector)
-    ]
-    by_similarity = sorted(queries, key=lambda w: word.similarity(w), reverse=True)
-    return [(w.lower_,w.similarity(word)) for w in by_similarity[:topn+1] if w.lower_ != word.lower_]
-
-def expanding_vocabulary(text, language):
-    if language == 'en':
-        nlp = spacy.load("en_core_web_sm")
-    elif language == 'es':
-        nlp = spacy.load("es_core_news_sm")
-    else:
-        raise Exception("Language not supported")
-
-    nlp.add_pipe("spacy_wordnet", after='tagger', config={'lang': nlp.lang})
-
-    new_text = text
-    doc = nlp(text)
-    for token in doc:
-        if not token.is_stop:
-            get_similar(token.text, nlp)
-            similar = most_similar(token.text.lower(), nlp)
-            for word, similarity in similar:
-                if word not in text:
-                    new_text = new_text + ' ' + word
-    return new_text
-
-"""
-def expanding_vocabulary(text, language, topn=3):
-    if language == 'en':
-        nlp = spacy.load("en_core_web_sm")
-    elif language == 'es':
-        nlp = spacy.load("es_core_news_sm")
-    doc = nlp(text)
-    new_words = []
-    for token in doc:
-        if token.is_stop == False:
-            word_v = nlp.vocab[str(token.text)]
-            queries = [
-                w for w in word_v.vocab 
-                if w.is_lower == word_v.is_lower and w.prob >= -15 and np.count_nonzero(w.vector)
-            ]
-            by_similarity = sorted(queries, key=lambda w: word_v.similarity(w), reverse=True)
-            new_words = new_words + [(w.lower_,w.similarity(word_v)) for w in by_similarity[:topn+1] if w.lower_ != word_v.lower_]
-    print("new_words", new_words)
-    return text+' '.join(new_words)    
-"""
-
 def query_word_phrase_stopwords(stopwords_list, topics_dir, topics_filename, index_name, output_dir, output_filename, language, fields):
     with open(topics_dir+'/'+topics_filename, 'r') as f:
         # obter cada topico
@@ -349,8 +291,6 @@ def query_word_phrase_stopwords(stopwords_list, topics_dir, topics_filename, ind
                         "bool": {
                             "should": [
                                 {"match": {fields[0] : title_no_sw } },
-                                #{"match": {fields[1] : remove_stopwords(title+' '+desc+' '+narr, sw_list_extra)} },
-                                #{"match": {fields[1] : title_no_sw+' '+desc_no_sw} }, #+' '+narr_no_sw} }, 
                                 {"match": {fields[1] : title_no_sw + ' ' + desc_no_sw +' '+narr_no_sw} },                               
                                 {"match_phrase": {fields[0]: title} },
                                 {"match": {
@@ -377,7 +317,7 @@ def query_word_phrase_stopwords(stopwords_list, topics_dir, topics_filename, ind
                                 {"match": {
                                     "content": {
                                         "query": \""""+title_no_sw+' '+entities_text+"""\",
-                                        "boost": 10}
+                                        "boost": 3}
                                     }
                                 }
                             ],
@@ -401,17 +341,13 @@ def query_word_phrase_stopwords(stopwords_list, topics_dir, topics_filename, ind
 
 
 
-#generate_results_using_all_words(path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es.txt')
-#generate_results_word_phrase_stopwords(sw_list, path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es_2.txt')
-#generate_results_no_punctuation(path+'/cmp269/gh95', 'topicos05.txt', 'gh95', path+'/cmp269/gh95', 'saida_es_2.txt')
-
 print('Queries com Concatenacao de Todos os Textos')
 query_all_words(path+'/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/'+nome_do_indice, 'saida_'+nome_do_indice+'_allwords_es.txt', fieldlist)
 
 print('Queries com Entidades e Sem Stopwords')
 query_entities_no_stopwords(sw_list, path+'/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/'+nome_do_indice, 'saida_'+nome_do_indice+'_entities_no_stopwords_es.txt', language, fieldlist)
 
-print('Queries com Entidades, Sem Stopwords, Removendo instrucoes nao relevantes e com composicoes Bool')
+print('Queries com Entidades, Sem Stopwords e com composicoes Bool')
 query_word_phrase_stopwords(sw_list, path+'/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/'+nome_do_indice, 'saida_'+nome_do_indice+'_nostopwords_es.txt', language, fields=fieldlist)
 
 print('Queries concluidas')
