@@ -1,0 +1,1140 @@
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Carta bomba Kiesbauer" } },
+                                {"match": {"TEXT" : "Carta bomba Kiesbauer explosión carta bomba estudio presentadora canal televisión PRO7 Arabella Kiesbauer deflagración misiva bombas análisis copresentadora canales TV Marschallin Tumler carta bomba enviada radicales extrema derecha  famosa presentadora televisión negra Arabella Kiesbauer hizo explosión estudio canal TV PRO7 9 junio 1995  asistente resultó herida  explosión investigaciones policiales tras suceso  informes ataques cartas bomba interés"} },                                
+                                {"match_phrase": {"TITLE": " Carta-bomba para Kiesbauer "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Carta bomba Kiesbauer ",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Carta bomba Kiesbauer " } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Christo envuelve edificio Reichstag alemán" } },
+                                {"match": {"TEXT" : "Christo envuelve edificio Reichstag alemán hablen acto artista alemán Christo Reichstag alemán Berlín hable protocolario artísta germano Jhesu germano artista Christo tardó dos semanas junio 1995 envolver Reichstag alemán utilizando enorme cantidad material  evento artístico  Cualquier preparativos evento mismo relevante  incluyendo debates políticos  decisiones preparativos técnicos"} },                                
+                                {"match_phrase": {"TITLE": " Christo envuelve el edificio del Reichstag alemán "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Christo envuelve edificio Reichstag alemán Reichstag Berlín Encontrar",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Christo envuelve edificio Reichstag alemán Reichstag Berlín Encontrar" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Conferencia Mujer Pekín" } },
+                                {"match": {"TEXT" : "Conferencia Mujer Pekín posiciones controvertidas adoptadas delegados hicieron Conferencia mundial Mujer Pekín expusiese fracaso posición polémicas aprobadas representantes hizo Cumbre mundiales Culiacanense expusiera fiasco debe discutir alguno numerosos problemas discrepancias surgieron relación Conferencia Mujer Pekín  interesantes  particular  posturas mantenidas representantes Vaticano  comunidades islámicas Partido Comunista Chino"} },                                
+                                {"match_phrase": {"TITLE": " Conferencia de la Mujer en Pekín "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Conferencia Mujer Pekín Pekín",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Conferencia Mujer Pekín Pekín" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Diamantes rebelión Sierra Leona" } },
+                                {"match": {"TEXT" : "Diamantes rebelión Sierra Leona ¿Cómo influido rebeliones manifestaciones inestabilidad política industria diamantes Sierra Leona influenciado sublevaciones protestas desestabilización políticas industrias Kimberley Palmitera Sierra ser  deben ser explícitos cuanto consecuencias rebelión industria diamantes"} },                                
+                                {"match_phrase": {"TITLE": " Diamantes y rebelión en Sierra Leona "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Diamantes rebelión Sierra Leona Sierra Leona? Sierra Leona   ¿Cómo",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Diamantes rebelión Sierra Leona Sierra Leona? Sierra Leona   ¿Cómo" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Importaciones arroz Japón" } },
+                                {"match": {"TEXT" : "Importaciones arroz Japón discutan razones consecuencias primeras importaciones arroz Japón debatan motivos repercusiones últimas exportaciones frijoles 1994  Japón decidió abrir mercado nacional arroz países primera vez  deben comentar tema  discusión puede incluir nombres países importa arroz  tipos arroz  controversias desatado decisión Japón"} },                                
+                                {"match_phrase": {"TITLE": " Importaciones de arroz en Japón "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Importaciones arroz Japón Japón   Encontrar Japón",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Importaciones arroz Japón Japón   Encontrar Japón" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Comida rápida Japón" } },
+                                {"match": {"TEXT" : "Comida rápida Japón ¿Qué cadena americana comida rápida gran número restaurantes franquicia Japón cadenas norteamericana comidas lenta enorme numero cafeterías franquicias nipona deben mencionar nombre cadena americana comida rápida éxito Japón  pueden contener adicional introducción clase comida sociedad japonesa"} },                                
+                                {"match_phrase": {"TITLE": " Comida rápida en Japón "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Comida rápida Japón Japón? Japón   ¿Qué",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Comida rápida Japón Japón? Japón   ¿Qué" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Accidentes petrolíferos aves" } },
+                                {"match": {"TEXT" : "Accidentes petrolíferos aves describan daños lesiones causadas aves vertidos accidentales petróleo polución describa destrozos traumatismos provocadas zancudas vertido encallamientos crudo contaminación traten daños sufren aves causa accidentes petrolíferos  informes vertidos sentina derrames intencionados petróleo"} },                                
+                                {"match_phrase": {"TITLE": " Accidentes petrolíferos y aves "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Accidentes petrolíferos aves Encontrar",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Accidentes petrolíferos aves Encontrar" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Destrucción capa ozono" } },
+                                {"match": {"TEXT" : "Destrucción capa ozono ¿Qué agujeros capa ozono consecuencia contaminación agujero capas agotan causa polución tipos destrucción sufre capa ozono fruto contaminación  deben informar causas agujeros capa ozono"} },                                
+                                {"match_phrase": {"TITLE": " Destrucción de la capa de ozono "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Destrucción capa ozono ",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Destrucción capa ozono " } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Visita Papa Sri Lanka" } },
+                                {"match": {"TEXT" : "Visita Papa Sri Lanka informes acerca protestas problemas causados declaraciones previas Papa acerca budismo visita Sri Lanka reportes sobre movilizaciones problema ocasionados afirmaciones Cumplidas Benedicto sobre mahayana visitará Lanka Sri Papa Juan Pablo II encontró acogida desigual visitó Sri Lanka  país mayoritariamente budista  visita Papa Sri Lanka convirtió prueba relaciones Iglesia Católica líderes budistas  siguieron comentarios Budismo libro publicado recientemente"} },                                
+                                {"match_phrase": {"TITLE": " Visita del Papa a Sri Lanka "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Visita Papa Sri Lanka Sri Lanka Sri Lanka   Encontrar",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Visita Papa Sri Lanka Sri Lanka Sri Lanka   Encontrar" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "AI pena muerte" } },
+                                {"match": {"TEXT" : "AI pena muerte informes acciones concretas Amnistía Internacional pena muerte reportes operaciones específicas Aministía Intenacional penas fallecimiento Amnistía Internacional objetivo abolición pena muerte mundo  deben describir acciones específicas Amnistía Internacional pena muerte"} },                                
+                                {"match_phrase": {"TITLE": " AI contra la pena de muerte "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "AI pena muerte Encontrar AI Amnistía Internacional",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "AI pena muerte Encontrar AI Amnistía Internacional" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "maravillas Mundo Antiguo" } },
+                                {"match": {"TEXT" : "maravillas Mundo Antiguo Busque existencia descubrimiento restos siete maravillas mundo Encuentre inexistencia descubrimientos exhumados ocho bellezas orbe contendrán referencias cualquiera siete maravillas mundo todavía existen hoy  particularmente interesantes referencias descubrimientos restos recientes  cree puedan pertenecer siete maravillas"} },                                
+                                {"match_phrase": {"TITLE": " Las maravillas del Mundo Antiguo "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "maravillas Mundo Antiguo ",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "maravillas Mundo Antiguo " } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "derechos infancia" } },
+                                {"match": {"TEXT" : "derechos infancia Convención Naciones Unidas derechos infancia Convenio Unidas Naciones libertades niñez proporcionarán convención ONU acerca derechos infancia  así fecha adopción Asamblea General Naciones Unidas  definición derechos contemplados  ratificaron  etc"} },                                
+                                {"match_phrase": {"TITLE": " Los derechos de la infancia "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "derechos infancia Convención de las Naciones Unidas Encontrar",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "derechos infancia Convención de las Naciones Unidas Encontrar" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Juegos Olímpicos paz" } },
+                                {"match": {"TEXT" : "Juegos Olímpicos paz traten cómo Juegos Olímpicos pueden contribuir paz mundial intenten qué Olímpicos Juegos suelen contribuyan concordia mundiales identifiquen paz mundial objetivos Juegos Olímpicos  incluyendo atletas miembros Comité Olímpico Internacional pidan suspensión hostilidades juegos"} },                                
+                                {"match_phrase": {"TITLE": " Los Juegos Olímpicos y la paz "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Juegos Olímpicos paz ",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Juegos Olímpicos paz " } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Libertad Expresión Internet" } },
+                                {"match": {"TEXT" : "Libertad Expresión Internet hable censura libertad expresión Internet hablen censurar liberad libertad web discutan asuntos pornografía racismo Internet  mencionar tema censura libertad expresión  considerarán"} },                                
+                                {"match_phrase": {"TITLE": " Libertad de Expresión en Internet "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Libertad Expresión Internet ",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Libertad Expresión Internet " } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Riesgos teléfonos móviles" } },
+                                {"match": {"TEXT" : "Riesgos teléfonos móviles ¿Qué riesgos peligros trae consigo creciente uso teléfonos móviles peligros riesgos traen trajo crecientes utilización móviles teléfonos deben describir problemas relacionados uso teléfono móvil  riesgos salud relacionados uso teléfono móvil  ejemplo  riesgos relacionados radiación  peligros achacables teléfonos móviles  ejemplo  accidentes tráfico causados conductores distraídos"} },                                
+                                {"match_phrase": {"TITLE": " Riesgos de los teléfonos móviles "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Riesgos teléfonos móviles ",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Riesgos teléfonos móviles " } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Sindicatos Europa" } },
+                                {"match": {"TEXT" : "Sindicatos Europa ¿Qué papel juegan sindicatos distintos países europeos protagónico juega sindicales diferentes latinoamericanos españoles deben comparar papel juegan sindicatos  status importancia dos países europeos  relevante deberá incluir nivel organización  mecanismos emprender negociaciones clima general mercado trabajo"} },                                
+                                {"match_phrase": {"TITLE": " Sindicatos en Europa "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Sindicatos Europa Europa   ¿Qué",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Sindicatos Europa Europa   ¿Qué" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Ganadoras Wimbledon" } },
+                                {"match": {"TEXT" : "Ganadoras Wimbledon Dar nombres ganadoras torneo tenis Wimbledon femenino Salaam apodos finalistas campeonato voleibol Garros masculino Cualquier documento vencedora cualquier campeonato Wimbledon tenis femenino relevante  nombres ganadoras deben constar explícitamente"} },                                
+                                {"match_phrase": {"TITLE": " Ganadoras de Wimbledon "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Ganadoras Wimbledon ",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Ganadoras Wimbledon " } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Fútbol  disturbios Dublín" } },
+                                {"match": {"TEXT" : "Fútbol  disturbios Dublín suspensión partido internacional fútbol Irlanda Inglaterra Dublín tras disturbios lugar encuentro suspensiones partidos internacionales futbol después altercados Hawáian duelo Tras disturbios provocados hooligans  partido internacional fútbol Irlanda Inglaterra suspendido irlandeses ganaban 1 0 minuto 27 encuentro"} },                                
+                                {"match_phrase": {"TITLE": " Fútbol: disturbios en Dublín "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Fútbol  disturbios Dublín Dublín   Encontrar Irlanda Dublín Inglaterra",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Fútbol  disturbios Dublín Dublín   Encontrar Irlanda Dublín Inglaterra" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Medio ambiente petróleo Mar Norte" } },
+                                {"match": {"TEXT" : "Medio ambiente petróleo Mar Norte ¿Qué medidas emprendido proteger medio ambiente aumento exploración producción petróleo Mar Norte drásticas iniciado salvaguardar ambiente medioambiente incremento exploraciones productor crudo Ansenuza Sur deben identificar debatir cuestiones medioambientales relacionadas exploración producción petróleo Mar Norte  decomisión terreno petrolífero solamente si mencionan problemas ecológicos  cambio  simplemente enumeren compañías involucradas perforación informen volumen producción beneficios interés"} },                                
+                                {"match_phrase": {"TITLE": " Medio ambiente y petróleo en el Mar del Norte "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Medio ambiente petróleo Mar Norte Mar del Norte   ¿Qué Mar del Norte",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Medio ambiente petróleo Mar Norte Mar del Norte   ¿Qué Mar del Norte" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Consumo whisky escocés" } },
+                                {"match": {"TEXT" : "Consumo whisky escocés tratarán cantidad whisky escocés consumida escoceses  relación cantidad whisky escocés exporta Escocia tratará proporción whiskey irlandés consume irlandeses vinculación proporción whiskey irlandés exportan ser  deben informar consumo whisky escocés escoceses relación volumen producción  hablen consumo whisky escocés países analicen causas disminución exportaciones"} },                                
+                                {"match_phrase": {"TITLE": " Consumo de whisky escocés "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Consumo whisky escocés Escocia",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Consumo whisky escocés Escocia" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Dietas celíacos" } },
+                                {"match": {"TEXT" : "Dietas celíacos informes discutan problemas dieta celíacos reportes debatan problema hipocalórica celiacos informes discutan problemas nutricionales celíacos  particular interés informes si celíacos pueden comer avena"} },                                
+                                {"match_phrase": {"TITLE": " Dietas para celíacos "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Dietas celíacos ",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Dietas celíacos " } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Aduanas UE Turquía" } },
+                                {"match": {"TEXT" : "Aduanas UE Turquía problemas planteados Grecia relación desaparición aduanas Unión Europea Turquía problema plantean vinculación desparición aduaneros deben mencionar explícitamente posición Grecia referencia propuesta unión aduanera UE Turquía"} },                                
+                                {"match_phrase": {"TITLE": " Aduanas entre la UE y Turquía "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Aduanas UE Turquía Turquía Unión Europea UE Grecia Turquía   Encontrar",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Aduanas UE Turquía Turquía Unión Europea UE Grecia Turquía   Encontrar" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Restricciones fumadores" } },
+                                {"match": {"TEXT" : "Restricciones fumadores normas leyes cuyo objetivo prohibir limitar tabaco restaurantes reglas promulgadas cuya propósito restringir restringir cigarrillos cafeterías hablen leyes regulaciones relacionadas prohibición limitación consumo tabaco restaurantes  así describan propuestas consecuencias tipo legislación"} },                                
+                                {"match_phrase": {"TITLE": " Restricciones para los fumadores "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Restricciones fumadores Encontrar",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Restricciones fumadores Encontrar" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Sentencias drogas Europa" } },
+                                {"match": {"TEXT" : "Sentencias drogas Europa ¿Qué sentencias dictado Europa venta ilegal drogas sentencia dictó vender ilícita estupefacientes deben proporcionar sentencias dictadas países europeos relación tráfico drogas  debe incluir tipo sentencia  duración condena penas alternativas  penas consumo drogas"} },                                
+                                {"match_phrase": {"TITLE": " Sentencias sobre drogas en Europa "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Sentencias drogas Europa Europa Europa   ¿Qué",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Sentencias drogas Europa Europa Europa   ¿Qué" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Globos Oro 1994" } },
+                                {"match": {"TEXT" : "Globos Oro 1994 ¿Qué película ganó Globo Oro mejor drama 1994 filme ganaron Globos Romics mejores comedia Globos Oro temporada cine 1994 concedieron Ángeles junio 1995  deben mencionar nombre película ganó premio mejor drama Ángeles"} },                                
+                                {"match_phrase": {"TITLE": " Globos de Oro 1994 "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Globos Oro 1994 ",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Globos Oro 1994 " } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "general francés zona seguridad Balcanes" } },
+                                {"match": {"TEXT" : "general francés zona seguridad Balcanes ¿Quién general francés responsable creación zona seguridad conflicto Balcanes Vallovera galo responsables crear región vigilancia conflictos balcánicos darán nombre general francés fuerzas IFOR crearon zona seguridad conflicto Balcanes"} },                                
+                                {"match_phrase": {"TITLE": " El general francés y la zona de seguridad en los Balcanes "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "general francés zona seguridad Balcanes Balcanes   ¿Quién",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "general francés zona seguridad Balcanes Balcanes   ¿Quién" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Relaciones China Mongolia" } },
+                                {"match": {"TEXT" : "Relaciones China Mongolia relaciones recientes acuerdos cooperación China Mongolia lazos anteriores convenios colaboración proporcionen relaciones políticas económicas China Mongolia siglo XX"} },                                
+                                {"match_phrase": {"TITLE": " Relaciones China-Mongolia "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Relaciones China Mongolia China Mongolia",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Relaciones China Mongolia China Mongolia" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Asesinato Rabin" } },
+                                {"match": {"TEXT" : "Asesinato Rabin ¿Quién disparó Isaac Rabin dispararon Abraham Yitzhak deberán dar nombre asesino Isaac Rabin  primer ministro Israel  explicar razones asesinato"} },                                
+                                {"match_phrase": {"TITLE": " Asesinato de Rabin "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Asesinato Rabin qué?",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Asesinato Rabin qué?" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "aparición grabadora CD" } },
+                                {"match": {"TEXT" : "aparición grabadora CD grabadora CD reacciones industria discográfica magnetófono DVD reacción industrias disquera especialmente acerca consecuencias industria discográfica uso grabadoras CD asuntos relacionados derechos propiedad intelectual"} },                                
+                                {"match_phrase": {"TITLE": " La aparición de la grabadora de CD "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "aparición grabadora CD ",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "aparición grabadora CD " } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Lenguas oficiales UE" } },
+                                {"match": {"TEXT" : "Lenguas oficiales UE acerca planes franceses reducir cinco número lenguas oficiales Unión Europea sobre plan ingleses disminuir seis numero habladas suboficiales UE UE Francia propuesto limitar lenguas principales Unión francés  inglés  alemán  italiano español  Tras fuerte oposición  propuesta sido retirada  deben hacer referencia propuesta"} },                                
+                                {"match_phrase": {"TITLE": " Lenguas oficiales de la UE "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Lenguas oficiales UE UE   Encontrar Unión Europea",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Lenguas oficiales UE UE   Encontrar Unión Europea" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Final hockey hielo Lillehammer" } },
+                                {"match": {"TEXT" : "Final hockey hielo Lillehammer ¿Qué equipos jugaron final hockey hielo Juegos Olímpicos Lillehammer 1994 equipo disputaron semifinal patines hielos Olímpicos Juegos Placid deben mencionar equipos jugaron final hockey hielo Juegos Olímpicos Lillehammer 1994  informen equipos quedaron primer segundo lugar partido mencionar explícitamente final"} },                                
+                                {"match_phrase": {"TITLE": " Final de hockey sobre hielo en Lillehammer "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Final hockey hielo Lillehammer Lillehammer   ¿Qué",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Final hockey hielo Lillehammer Lillehammer   ¿Qué" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Récords mundiales Atletismo 1995" } },
+                                {"match": {"TEXT" : "Récords mundiales Atletismo 1995 ¿Qué nuevas marcas lograron campeonatos mundo 1995 Göteborg nuevos marca consiguieron campeonato orbe IFK deberán mencionar récords batieron  describir prueba resultado  dar nombre nuevo poseedor récord"} },                                
+                                {"match_phrase": {"TITLE": " Récords mundiales de Atletismo de 1995 "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Récords mundiales Atletismo 1995 Atletismo Göteborg?",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Récords mundiales Atletismo 1995 Atletismo Göteborg?" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Pruebas quark top" } },
+                                {"match": {"TEXT" : "Pruebas quark top informes pruebas experimentales científicos norteamericanos existencia quark top reportes prueba experimental investigadores estadounidenses inexistencia quarks Eurochart Científicos centro investigación norteamericano comunicaron podido probar experimentalmente existencia quark top  partículas elementales llamadas quarks constituyentes fundamentales materia  deben discutir prueba experimental  partículas elementales general"} },                                
+                                {"match_phrase": {"TITLE": " Pruebas del quark top "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Pruebas quark top Encontrar",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Pruebas quark top Encontrar" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Polémica crucifijos Bavaria" } },
+                                {"match": {"TEXT" : "Polémica crucifijos Bavaria polémica crucifijos escuelas bávaras polémicas crucifijo escolares austriacas polémica crucifijos  corte constitucional federal Alemania confirmó padres derecho quejarse forma individual colocación crucifijos aulas escuelas bávaras"} },                                
+                                {"match_phrase": {"TITLE": " Polémica de crucifijos en Bavaria "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Polémica crucifijos Bavaria Bavaria   Encontrar",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Polémica crucifijos Bavaria Bavaria   Encontrar" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Impacto medioambiental Everglades" } },
+                                {"match": {"TEXT" : "Impacto medioambiental Everglades noticias impacto medioambiental sufrido Everglades  ejemplo  causado industria azucarera Florida informaciones repercusiones ambiental padecido tanto ocasionado industrias remolacha noticias deben tratar daño causado medio ambiente Everglades  particular interés discusiones problemas causados industria azucarera  referencias impacto medioambiental producido vertidos granjas general"} },                                
+                                {"match_phrase": {"TITLE": " Impacto medioambiental en los Everglades "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Impacto medioambiental Everglades Florida Everglades Everglades   Encontrar",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Impacto medioambiental Everglades Florida Everglades Everglades   Encontrar" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Shoemaker Levy Júpiter" } },
+                                {"match": {"TEXT" : "Shoemaker Levy Júpiter noticias impacto cometa Shoemaker Levy planeta Júpiter informaciones repercusiones Elenin McNaught Shuki planetas Saturno proporcionarán datos desintegración cometa Shoemaker Levy colisión restos Júpiter"} },                                
+                                {"match_phrase": {"TITLE": " El Shoemaker-Levy y Júpiter "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Shoemaker Levy Júpiter planeta Júpiter cometa Shoemaker-Levy Júpiter   Encontrar",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Shoemaker Levy Júpiter planeta Júpiter cometa Shoemaker-Levy Júpiter   Encontrar" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Consumo leche Europa" } },
+                                {"match": {"TEXT" : "Consumo leche Europa Proporcionar estadísticas relativa consumo leche Europa Prestar cifras relativo consumir lácteos deben proporcionar estadísticas u tipo consumo leche Europa algún país europeo  informes derivados leche"} },                                
+                                {"match_phrase": {"TITLE": " Consumo de leche en Europa "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Consumo leche Europa Europa   Proporcionar Europa",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Consumo leche Europa Europa   Proporcionar Europa" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Insumisión" } },
+                                {"match": {"TEXT" : "Insumisión casos personas dispuestas ir cárcel realizar servicio militar caso pesonas dispuestos irse prisión efectuar servicios militares deben hablar personas rehusen completo servicion militar  así equivalente civil  dispuestos ir cárcel defensa ideas"} },                                
+                                {"match_phrase": {"TITLE": " Insumisión "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Insumisión ",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Insumisión " } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Dimisión Secretario General OTAN" } },
+                                {"match": {"TEXT" : "Dimisión Secretario General OTAN ¿Por Secretario General OTAN vio obligado dimitir 1995 Subsecretario Subjefatura vió obligada dimitido 1995 Secretario General OTAN encontraba bajo fuerte presión política obligó dimitir  deben mencionar menos razones dimisión"} },                                
+                                {"match_phrase": {"TITLE": " Dimisión del Secretario General de la OTAN "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Dimisión Secretario General OTAN OTAN Secretario General de la OTAN Secretario General de la",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Dimisión Secretario General OTAN OTAN Secretario General de la OTAN Secretario General de la" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Bancarrota Barings" } },
+                                {"match": {"TEXT" : "Bancarrota Barings ¿Qué magnitud alcanzaron pérdidas caso bancarrota Barings magnitudes alcanzó ganancias casos quiebra Landsbanki deben cuantificar alguna manera pérdidas causadas caída banco antiguo Gran Bretaña"} },                                
+                                {"match_phrase": {"TITLE": " Bancarrota del Barings "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Bancarrota Barings Barings? Barings   ¿Qué",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Bancarrota Barings Barings? Barings   ¿Qué" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Pruebas nucleares francesas" } },
+                                {"match": {"TEXT" : "Pruebas nucleares francesas presión internacional Francia poner fin pruebas nucleares presiones internacionales ponerle propósito prueba nuclear decisión Jacques Chirac tras elección romper moratoria internacional pruebas nucleares sido denunciada Greenpeace grupos ecologistas  Cada prueba provocó fuertes protestas mundo  especialmente Australia Nueva Zelanda  Japón EEUU expresaron disgusto actitud francesa"} },                                
+                                {"match_phrase": {"TITLE": " Pruebas nucleares francesas "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Pruebas nucleares francesas Encontrar Francia",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Pruebas nucleares francesas Encontrar Francia" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "50 aniversario desembarco Normandía" } },
+                                {"match": {"TEXT" : "50 aniversario desembarco Normandía informes lanzamiento paracaidistas veteranos Sainte Mère Église  celebraciones 50 aniversario desembarco Normandía reportes lanzado aerotransportadas exsoldados Sulpice Église Mère festividades conmemoración desembarcos Calvados Alrededor 40 veteranos lanzaron paracaídas Sainte Mère Église celebraciones 50 aniversario desembarco Normandía  tal hecho 50 años día D  Cualquier preparativos evento mismo"} },                                
+                                {"match_phrase": {"TITLE": " 50 aniversario del desembarco de Normandía "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "50 aniversario desembarco Normandía Sainte-Mère-Église",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "50 aniversario desembarco Normandía Sainte-Mère-Église" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Restos dinosaurios Asia" } },
+                                {"match": {"TEXT" : "Restos dinosaurios Asia ¿En partes Asia sido encontrados restos dinosaurio regiones ser hallados exhumados terópodo harán referencia hallazgo cualquier tipo resto fosilizado dinosaurio  incluyendo huevos dinosaurio  cualquier lugar Asia  únicamente mencionen descubrimiento huellas dinosaurio"} },                                
+                                {"match_phrase": {"TITLE": " Restos de dinosaurios en Asia "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Restos dinosaurios Asia Asia Asia   ¿",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Restos dinosaurios Asia Asia Asia   ¿" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Permiso maternidad Europa" } },
+                                {"match": {"TEXT" : "Permiso maternidad Europa den acerca prestaciones relacionadas duración permiso maternidad Europa diesen sobre jubilatorias relacionados duracción autorización paternidad deben proporcionar cifras exactas respecto tiempo concedido permiso maternidad mujeres trabajadoras Europa  debates  leyes proposiciones ley relacionadas duración permiso maternidad mujeres derecho  siempre den cifras  interesantes comparaciones regulaciones distintos países"} },                                
+                                {"match_phrase": {"TITLE": " Permiso de maternidad en Europa "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Permiso maternidad Europa Europa   Encontrar Europa",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Permiso maternidad Europa Europa   Encontrar Europa" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Fotos holandesas Srebrenica" } },
+                                {"match": {"TEXT" : "Fotos holandesas Srebrenica ¿Qué sucedido fotografías películas hicieron soldados holandeses Srebrenica evidenciaban diversas violaciones derechos humanos sucedió fotos filmes hizo combatientes neerlandeses mostraban distintas flagrantes libertades seres Tras caída Srebrenica  fotografías videos realizados ejército holandés evidencias violaciones derechos humanos desaparecieron  películas restantes mostraban sólo imágenes claras  proporcionarán cualquier tipo incidente podrán incluir detalles contenido fotografías  película discusiones pasó"} },                                
+                                {"match_phrase": {"TITLE": " Fotos holandesas de Srebrenica "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Fotos holandesas Srebrenica Srebrenica   ¿Qué Srebrenica",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Fotos holandesas Srebrenica Srebrenica   ¿Qué Srebrenica" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Coalición gobierno holandés" } },
+                                {"match": {"TEXT" : "Coalición gobierno holandés ¿Qué partidos políticos formaron coalición gobernante  llamada  gabinete violeta   Holanda 1994 1995 partido ideológicos formó coalicción gobernantes denominada gobierno amarillo 1994  improbable combinación partidos formó coalición gobierno Holanda  deben mencionar nombres tres partidos"} },                                
+                                {"match_phrase": {"TITLE": " Coalición del gobierno holandés "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Coalición gobierno holandés Holanda",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Coalición gobierno holandés Holanda" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Transporte nuclear Alemania" } },
+                                {"match": {"TEXT" : "Transporte nuclear Alemania protestas transporte material radioactivo contenedores Castor Alemania movilizaciones trasporte materiales radiactivo contenedor Pollux tratarán transporte desechos radioactivos contenedores Castor Gorleben  Baja Sajonia  acciones protesta  informen protestas envíos relevante  incluso si especifica lugar tipo contenedor usado"} },                                
+                                {"match_phrase": {"TITLE": " Transporte nuclear en Alemania "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Transporte nuclear Alemania Alemania   Encontrar Alemania",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Transporte nuclear Alemania Alemania   Encontrar Alemania" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Reforma ortografía alemana" } },
+                                {"match": {"TEXT" : "Reforma ortografía alemana informen introducción reforma ortografía alemana idioma alemán informaran introducir reformas pronunciación germana lengua germano reforma ortografía aprobada entrar vigor 1 Agosto 1998 países habla alemana  reglas ortográficas puntuación simplificadas considerablemente  embargo  reforma controvertida"} },                                
+                                {"match_phrase": {"TITLE": " Reforma de la ortografía alemana "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Reforma ortografía alemana ",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Reforma ortografía alemana " } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Hubble agujeros negros" } },
+                                {"match": {"TEXT" : "Hubble agujeros negros ¿Qué papel desempeñó telescopio Hubble demostración existencia agujeros negros protagónico ejerció telescopios Telescopio demostraciones inexistencia agujero mulatos deben hablar específicamente pruebas aportadas telescopio Hubble agujeros negros  discusiones generales Hubble agujeros negros"} },                                
+                                {"match_phrase": {"TITLE": " El Hubble y los agujeros negros "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Hubble agujeros negros ",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Hubble agujeros negros " } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Trabajo infantil Asia" } },
+                                {"match": {"TEXT" : "Trabajo infantil Asia hablen trabajo infantil Asia propuestas erradicarlo mejorar condiciones laborales niños hable trabajar infantiles iniciativas erradicarla fortalecer climatológicas laboral niñas traten trabajo infantil países Asia concretos  condiciones laborales niños medidas propuestas erradicar trabajo infantil"} },                                
+                                {"match_phrase": {"TITLE": " Trabajo infantil en Asia "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Trabajo infantil Asia Asia Asia   Encontrar",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Trabajo infantil Asia Asia Asia   Encontrar" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Cultivos Delta Ebro" } },
+                                {"match": {"TEXT" : "Cultivos Delta Ebro ¿Cuál cultivo predominante Delta Ebro principios 90 cultivos predomina Amacuro Segre mediados deben mencionar cultivo predominante Delta Ebro noventa  pueden mencionar cambios previstos según posibles acuerdos tomados GATT"} },                                
+                                {"match_phrase": {"TITLE": " Cultivos en el Delta del Ebro "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Cultivos Delta Ebro Delta del Ebro Delta del Ebro   ¿Cuál",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Cultivos Delta Ebro Delta del Ebro Delta del Ebro   ¿Cuál" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Asesinato director cadena TV Rusia" } },
+                                {"match": {"TEXT" : "Asesinato director cadena TV Rusia ¿Cómo llamaba jefe cadena televisión rusa asesinado escalera domicilio Moscú llamaban subjefe cadenas TV ucraniana acribillado escaleras Ipis Kiev deben hablar asesinato Moscú director cadenas televisión Rusia antiguo periodista  proporcionando nombre"} },                                
+                                {"match_phrase": {"TITLE": " Asesinato del director de una cadena de TV en Rusia "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Asesinato director cadena TV Rusia Rusia   ¿Cómo Moscú?",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Asesinato director cadena TV Rusia Rusia   ¿Cómo Moscú?" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "UE países bálticos" } },
+                                {"match": {"TEXT" : "UE países bálticos hablen negociaciones países bálticos  Estonia  Letonia Lituania  Unión Europea relacionadas adhesión UE hable conversaciones latinoamericanos bálticas relacionados ratificación deben describir negociaciones UE Estonia  Letonia Lituania  noticias acuerdos cooperación individuales países europeos concretos alguna repúblicas bálticas"} },                                
+                                {"match_phrase": {"TITLE": " La UE y los países bálticos "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "UE países bálticos Estonia Letonia Lituania Unión Europea UE Encontrar",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "UE países bálticos Estonia Letonia Lituania Unión Europea UE Encontrar" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Familia real italiana" } },
+                                {"match": {"TEXT" : "Familia real italiana exilio Italia miembros varones Casa Saboya exiliado integrantes mujeres Blanca Savoya proporcionarán acerca términos exilio familia real italiana  Saboya  condiciones impuestas  proporcionen debates opiniones relacionadas posible fin destierro herederos regreso Italia deben ser cuenta"} },                                
+                                {"match_phrase": {"TITLE": " Familia real italiana "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Familia real italiana Italia",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Familia real italiana Italia" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Huelga asistentes vuelo italianos" } },
+                                {"match": {"TEXT" : "Huelga asistentes vuelo italianos referencias acerca transtornos problemas causados huelgas asistentes vuelo Italia alusiones sobre trastornos problema ocasionados huelga invitados avión darán acerca trastornos consecuencia directa huelgas asistentes vuelo italianos  relevante puede incluir detalles retrasos cancelaciones vuelos dificultades pasajeros cualquier punto Europa partes  debidas efectos acción sindicatos asistentes vuelo Italia"} },                                
+                                {"match_phrase": {"TITLE": " Huelga de asistentes de vuelo italianos "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Huelga asistentes vuelo italianos Encontrar Italia",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Huelga asistentes vuelo italianos Encontrar Italia" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Fusión bancos japoneses" } },
+                                {"match": {"TEXT" : "Fusión bancos japoneses fusión banco japonés Mitsubishi Banco Tokyo formar mayor banco mundo fusionar bancos nipón Hipotecario Tokio formando menor bancos orbe dos instituciones japonesas crédito Mitsubishi Bank Bank of Tokyo llegaron acuerdo fusión  nuevo banco mayor mundo"} },                                
+                                {"match_phrase": {"TITLE": " Fusión de bancos japoneses "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Fusión bancos japoneses Encontrar Mitsubishi Banco de Tokyo",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Fusión bancos japoneses Encontrar Mitsubishi Banco de Tokyo" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Tratado paz Dayton" } },
+                                {"match": {"TEXT" : "Tratado paz Dayton acuerdo paz alcanzado Dayton Bosnia Herzegovina acuedo concordia alcanzaron Herzegovina Bosnia acuerdo tratado Dayton  OTAN hizo responsable mantenimiento militar paz Bosnia Herzegovina  deben informar negociaciones  contenidos conclusiones acuerdo"} },                                
+                                {"match_phrase": {"TITLE": " Tratado de paz de Dayton "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Tratado paz Dayton Dayton Bosnia-Herzegovina",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Tratado paz Dayton Dayton Bosnia-Herzegovina" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Oscar honorífico directores italianos" } },
+                                {"match": {"TEXT" : "Oscar honorífico directores italianos acerca directores italianos sido premiados Oscar honorífico reconocimiento toda carrera sobre subdirectores napolitanos ser galardonados Óscar honorario reconocimento todo carera proporcionarán directores cine italianos recibido Oscar entrega Premios Academia Ángeles trayectoria toda vida dedicada cine"} },                                
+                                {"match_phrase": {"TITLE": " Oscar honorífico para directores italianos "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Oscar honorífico directores italianos Encontrar",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Oscar honorífico directores italianos Encontrar" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Epidemia ébola Zaire" } },
+                                {"match": {"TEXT" : "Epidemia ébola Zaire medidas preventivas tomadas tras brote epidémico ébola Zaire drásticas prevención adoptadas después epidémico epidémica Ebola Mayo 1995  ciudad zaireña Kikwit  produjo brote epidemias temidas  epidemia ébola  informan medidas tomaron impedir propagación enfermedad"} },                                
+                                {"match_phrase": {"TITLE": " Epidemia de ébola en Zaire "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Epidemia ébola Zaire Zaire Zaire   Encontrar",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Epidemia ébola Zaire Zaire Zaire   Encontrar" } }
+                            ]
+                        }
+                    }
+                }
+{"query": {
+                        "bool": {
+                            "should": [
+                                {"match": {"TITLE" : "Inundaciones Holanda Alemania" } },
+                                {"match": {"TEXT" : "Inundaciones Holanda Alemania estadísticas inundaciones Holanda Alemania 1995 cifras torrenciales deben cuantificar efectos daño causado inundaciones lugar Alemania Países Bajos 1995  términos número personas animales evacuados pérdidas económicas"} },                                
+                                {"match_phrase": {"TITLE": " Inundaciones en Holanda y Alemania "} },
+                                {"match": {
+                                    "content": {
+                                        "query": "Inundaciones Holanda Alemania Holanda Alemania   Encontrar Alemania",
+                                        "boost": 3}
+                                    }
+                                }
+                            ],
+                            "must": [
+                                {"match": {"TEXT" : "Inundaciones Holanda Alemania Holanda Alemania   Encontrar Alemania" } }
+                            ]
+                        }
+                    }
+                }
