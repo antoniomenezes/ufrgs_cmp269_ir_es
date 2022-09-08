@@ -83,6 +83,14 @@ language = 'es'
 sw_list = stopwords.words('spanish')
 sw_list_extra = ['encontrar','documentos','relevantes','información']
 sw_list = sw_list + sw_list_extra
+
+# Gerando arquivos de stopwords de acordo com o idioma
+f = open(path+'/'+nome_do_indice+'/stopwords_'+language+'.txt', 'w', encoding='utf-8')
+for s in sw_list:
+    f.write(s+'\n')	
+f.close()
+
+# Download em SBW-vectors-300-min5.txt em https://www.kaggle.com/datasets/rtatman/pretrained-word-vectors-for-spanish?resource=download
 #w2v_modelo = KeyedVectors.load_word2vec_format(path+"/"+"SBW-vectors-300-min5.txt")
 #print('word2vec loaded')
 
@@ -697,11 +705,11 @@ def re_ranking(topics_hits, entities_docs, doc_entities, query_entities, output_
 
     return new_topics_hits
 
-#print('Queries com Concatenacao de Todos os Textos')
-#query_all_words(path+'/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/'+nome_do_indice, 'saida_'+nome_do_indice+'_allwords_es.txt', fieldlist)
+print('Queries com Concatenacao de Todos os Textos')
+query_all_words(path+'/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/'+nome_do_indice, 'saida_'+nome_do_indice+'_allwords_es.txt', fieldlist)
 
-#print('Queries com Entidades e Sem Stopwords')
-#query_entities_no_stopwords(sw_list, path+'/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/'+nome_do_indice, 'saida_'+nome_do_indice+'_entities_no_stopwords_es.txt', language, fieldlist)
+print('Queries com Entidades e Sem Stopwords')
+query_entities_no_stopwords(sw_list, path+'/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/'+nome_do_indice, 'saida_'+nome_do_indice+'_entities_no_stopwords_es.txt', language, fieldlist)
 
 print('Queries com Entidades, Sem Stopwords e com composicoes Bool')
 query_word_phrase_stopwords(sw_list, path+'/'+nome_do_indice, arquivo_de_topicos, nome_do_indice, path+'/'+nome_do_indice, 'saida_'+nome_do_indice+'_nostopwords_es.txt', language, fields=fieldlist)
